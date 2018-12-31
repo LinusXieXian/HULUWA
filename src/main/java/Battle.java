@@ -51,24 +51,24 @@ public class Battle {
     	//新的回合设置一把新锁
     	land.getNewLock();
     	//初始化葫芦娃、爷爷、蝎子精蛇精小喽喽对象，并确定它们的初始坐标（摆好阵形）
-    	placeCreature(new Grandpa("Grandpa",this),1,4);
-    	placeCreature(new HuLuWa(1,HuLuWa.Color.red,this),0,1);
-    	placeCreature(new HuLuWa(2,HuLuWa.Color.orange,this),0,2);
-    	placeCreature(new HuLuWa(3,HuLuWa.Color.yellow,this),0,3);
-    	placeCreature(new HuLuWa(4,HuLuWa.Color.green,this),0,4);
-    	placeCreature(new HuLuWa(5,HuLuWa.Color.cyan,this),0,5);
-    	placeCreature(new HuLuWa(6,HuLuWa.Color.blue,this),0,6);
-    	placeCreature(new HuLuWa(7,HuLuWa.Color.purple,this),0,7);
+    	placeCreature(new Grandpa("Grandpa",this,false),1,4);
+    	placeCreature(new HuLuWa(1,HuLuWa.Color.red,this,false),0,1);
+    	placeCreature(new HuLuWa(2,HuLuWa.Color.orange,this,false),0,2);
+    	placeCreature(new HuLuWa(3,HuLuWa.Color.yellow,this,false),0,3);
+    	placeCreature(new HuLuWa(4,HuLuWa.Color.green,this,false),0,4);
+    	placeCreature(new HuLuWa(5,HuLuWa.Color.cyan,this,false),0,5);
+    	placeCreature(new HuLuWa(6,HuLuWa.Color.blue,this,false),0,6);
+    	placeCreature(new HuLuWa(7,HuLuWa.Color.purple,this,false),0,7);
 
-    	placeCreature(new Scorpion("Scorpion",this),4,4);			
-    	placeCreature(new Snake("Snake",this),5,4);
-    	placeCreature(new Lesser("Lesser",this),5,3);
-    	placeCreature(new Lesser("Lesser",this),5,5);
-    	placeCreature(new Lesser("Lesser",this),6,2);
-    	placeCreature(new Lesser("Lesser",this),6,6);
-    	placeCreature(new Lesser("Lesser",this),7,3);
-    	placeCreature(new Lesser("Lesser",this),7,5);
-    	placeCreature(new Lesser("Lesser",this),8,4);
+    	placeCreature(new Scorpion("Scorpion",this,false),4,4);			
+    	placeCreature(new Snake("Snake",this,false),5,4);
+    	placeCreature(new Lesser("Lesser",this,false),5,3);
+    	placeCreature(new Lesser("Lesser",this,false),5,5);
+    	placeCreature(new Lesser("Lesser",this,false),6,2);
+    	placeCreature(new Lesser("Lesser",this,false),6,6);
+    	placeCreature(new Lesser("Lesser",this,false),7,3);
+    	placeCreature(new Lesser("Lesser",this,false),7,5);
+    	placeCreature(new Lesser("Lesser",this,false),8,4);
     }
     
     
@@ -125,6 +125,10 @@ public class Battle {
     
     public Land getLand() {
 		return land;
+	}
+    
+    public List<Creature> getCreatures() {
+		return creatures;
 	}
     
     public int getRoundCount() {

@@ -9,8 +9,8 @@ public class HuLuWa extends Creature{
 		red, orange, yellow, green, cyan, blue, purple
 	}
 	
-	public HuLuWa(int rank,Color color,Battle battle){
-		super(String.valueOf(rank),battle);
+	public HuLuWa(int rank,Color color,Battle battle,boolean testFlag){
+		super(String.valueOf(rank),battle,testFlag);
 		this.rank=rank;
 		this.color=color;
 	}
