@@ -5,10 +5,10 @@ public class Replay extends Thread{
 	private Battle battle;
 	private BufferedReader br;
 	
-	Replay(Battle battle,String fileName) throws FileNotFoundException{
+	Replay(Battle battle,File file) throws FileNotFoundException{
 		this.battle=battle;
 		this.battle.setRecord(true);
-		br = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+		br = new BufferedReader(new FileReader(file));
 		start();
 	}
 	
@@ -17,6 +17,7 @@ public class Replay extends Thread{
     	System.out.println("\n\n\n Replaying Round"+battle.getRoundCount()+"\n\n\n");
         String line;  
         try {
+        	//移动状态只有两种，一种是在原地被杀了，一种是移动到新位置
 			while ((line = br.readLine()) != null) {  
 	            if(line.contains("die")) {
 	            	int x=line.charAt(1)-'0';

@@ -19,13 +19,13 @@ public class Main extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         //初始化战斗
         battle.battleInit();
-        //按空格开始战斗，按F5刷新，按R回放上一场战斗
+        //按空格开始战斗，按F5刷新，按L并选取record.txt回放上一场战斗
         scene.setOnKeyPressed(input -> {
             if(input.getCode() == KeyCode.SPACE) {
             	battle.battleStart();
             }else if(input.getCode() == KeyCode.F5){
             	battle.battleInit();
-            }else if(input.getCode() == KeyCode.R){
+            }else if(input.getCode() == KeyCode.L){
             	battle.battleReplay(primaryStage);
             }
         });

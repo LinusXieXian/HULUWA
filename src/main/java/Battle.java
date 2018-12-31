@@ -1,5 +1,6 @@
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Battle {
@@ -78,8 +80,12 @@ public class Battle {
     public void battleReplay(Stage primaryStage) {
     	//初始化战场用于回放
 		battleInit();
+		FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("open record file");
+        fileChooser.setInitialDirectory(new File("."));
+        File file = fileChooser.showOpenDialog(primaryStage);
         try {
-			new Replay(this, recordFileName);
+			new Replay(this, file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
