@@ -14,11 +14,14 @@ public class Creature extends ImageView implements Runnable{
 	protected String name;
 	protected boolean alive=true;
 	protected Battle battle;
+	protected boolean testFlag=false;
 	
-	Creature(String name,Battle battle){
+	Creature(String name,Battle battle,boolean testFlag){
 		this.name=name;
 		this.battle=battle;
-		setImage();
+		if(!testFlag) {
+			setImage();
+		}
 	}
 	
 	
@@ -115,7 +118,11 @@ public class Creature extends ImageView implements Runnable{
 	public boolean isAlive() {
 		return alive;
 	}
-
+	
+	public boolean getTestFlag() {
+		return testFlag;
+	}
+	
 	//根据生物名字选取图片
 	private void setImage(){
         String imageName = name + ".png";

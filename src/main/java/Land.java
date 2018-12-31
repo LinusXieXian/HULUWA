@@ -42,12 +42,14 @@ public class Land extends Pane{
 	public void setObj(int x, int y,Creature obj){
         position[x][y].setObj(obj);
         position[x][y].setEmpty(false);
-
-        obj.setLayout(x, y);
-
-        if(!getChildren().contains(obj)){
-            getChildren().add(obj);
+        
+        if(!obj.getTestFlag()) {
+        	obj.setLayout(x, y);
+        	if(!getChildren().contains(obj)){
+                getChildren().add(obj);
+            }
         }
+
     }
 	
 	public void removeObj(int x, int y){
