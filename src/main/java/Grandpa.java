@@ -1,7 +1,7 @@
 
 public class Grandpa extends Creature{
 	
-	Grandpa(String name,Land homeTown,Position pos,Battle battle){
-		super(name,homeTown,pos,battle);
+	Grandpa(String name,Battle battle){
+		super(name,battle);
 	}
 }

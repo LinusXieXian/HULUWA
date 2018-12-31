@@ -6,7 +6,7 @@ public class Land extends Pane{
 	public static final int LENGTH=9;	//大地的长
 	public static final int WIDTH=8;	//宽
 	private Position [][]position;//大地区域
-	private static final Lock landLock = new ReentrantLock();
+	private Lock landLock = new ReentrantLock();
 	
 	Land(){
 		position=new Position[LENGTH][WIDTH];
@@ -19,6 +19,11 @@ public class Land extends Pane{
 	}
 	
     public Lock getLock() {
+		return landLock;
+	}
+    
+    public Lock getNewLock() {
+    	landLock=new ReentrantLock();
 		return landLock;
 	}
 	
@@ -50,9 +55,7 @@ public class Land extends Pane{
     }
 
     public void removeAllObj(){
-
-        getChildren().clear();
-
+        this.getChildren().clear();
         for(int i=0;i<LENGTH;i++){
             for(int j=0;j<WIDTH;j++){
             	position[i][j].removeObj();

@@ -4,9 +4,10 @@ public class Position {
 	private int y;
 	private boolean isEmpty=true;
 	private Creature obj=null; //位置上放置的物体
-	//背景图片每个方格（x轴）长123，（y轴）宽105；原点从3，109开始
+	//背景图片每个方格（x轴）长123，（y轴）宽105
 	public static final int HOLDER_LRNGTH=123;
 	public static final int HOLDER_WIDTH=105;
+	//原点位置
 	public static final int X_START=3+3*HOLDER_LRNGTH;
 	public static final int Y_START=109;
 
